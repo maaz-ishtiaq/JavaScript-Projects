@@ -13,9 +13,3 @@ document.getElementById("btn").addEventListener("click",
 )
 
 
-
-// const dataset = ["ABCDEFGHIJKLMNOPQRSTVUWXYZ", "abcdefghijklmnopqrstvuwxyz", "1234567890" , "!@#$%^&*"]
-// const passgen = (gen) => {
-//     return gen = Math.random()
-//     return passgen(dataset)
-// }
