@@ -11,5 +11,3 @@ const getcolor = () => {
 document.getElementById("btn").addEventListener("click",
     getcolor
 )
-
-
