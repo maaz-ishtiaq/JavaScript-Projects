@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            font-family: 'Exo', sans-serif;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            width: 30px;
+        }
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            position: relative;
+        }
+        .nav-links a:hover::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #4177DC;
+            left: 0;
+            bottom: -5px;
+        }
+        .nav-links li:first-child a {
+            color: #4177DC;
+        }
+        header, section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+        }
+        header h2 {
+            margin: 10px 0;
+        }
+        header p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .home-img {
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+            display: block;
+        }
+        .home-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .start-btn {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .start-btn button {
+            padding: 20px;
+            border-radius: 50%;
+            border: 2px solid #02DB8A;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+            transition: 0.3s;
+        }
+        .start-btn button:hover {
+            transform: scale(1.05);
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .about-img {
+            max-width: 300px;
+        }
+        .about-text {
+            max-width: 500px;
+            text-align: left;
+        }
+        .about-text button {
+            margin-top: 20px;
+            background-color: #4177DC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-section {
+            text-align: center;
+        }
+        .cars {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .car {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            transition: 0.3s;
+        }
+        .car:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .about-section {
+                flex-direction: column;
+            }
+        }

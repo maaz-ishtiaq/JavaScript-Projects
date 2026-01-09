@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chatbot</title>
+  <style>
+    /* Centered full-page layout */
+    body { margin:0; padding:0; display:flex; justify-content:center; align-items:center;
+      height:100vh; background: #f0f4f8; font-family: 'Segoe UI', sans-serif; }
+    .chat-container {
+      width: 400px; max-width: 90%; height: 600px; background: #ffffff;
+      border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex; flex-direction: column;
+    }
+    .chat-header {
+      padding: 16px; background: #0066cc; color: #fff;
+      font-size: 1.2em; font-weight: bold; border-top-left-radius:12px;
+      border-top-right-radius:12px;
+    }
+    .chat-body {
+      flex: 1; padding: 16px; overflow-y: auto; background: #f7f9fc;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .chat-input {
+      display: flex; border-top: 1px solid #ddd;
+    }
+    .chat-input textarea {
+      flex:1; padding:12px; border:none; resize:none;
+      font-size:1em; border-bottom-left-radius:12px;
+    }
+    .chat-input button {
+      padding: 0 20px; border:none; background:#0066cc; color:white;
+      font-size:1em; cursor:pointer; border-bottom-right-radius:12px;
+    }
+    .message {
+      max-width: 70%; padding: 10px 14px; border-radius: 18px;
+      line-height:1.4;
+    }
+    .message.user {
+      align-self: flex-end; background: #cfe9ff; color: #000;
+      border-bottom-right-radius:2px;
+    }
+    .message.bot {
+      align-self: flex-start; background: #e9ecef; color: #000;
+      border-bottom-left-radius:2px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">🤖 AI Chatbot</div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input">
+    <textarea id="userInput" rows="1" placeholder="Type your message..."></textarea>
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script>
+const API_KEY = "YOUR_OPENAI_KEY_HERE";  // ←🔑 Replace with your actual key
+
+const chatBody = document.getElementById('chatBody');
+const userInput = document.getElementById('userInput');
+const sendBtn = document.getElementById('sendBtn');
+
+// Auto-resize text area
+userInput.addEventListener('input', () => {
+  userInput.style.height = 'auto';
+  userInput.style.height = userInput.scrollHeight + 'px';
+});
+
+// Send message on click or enter
+sendBtn.addEventListener('click', sendMessage);
+userInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
+  appendMessage(text, 'user');
+  userInput.value = '';
+  userInput.style.height = 'auto';
+  appendMessage('Thinking...', 'bot', true);
+
+  try {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'Authorization':`Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: 'user', content: text }]
+      })
+    });
+    const data = await res.json();
+    const botMsg = data.choices?.[0]?.message?.content.trim() || '🤔 No response';
+    updateLastMessage(botMsg);
+  } catch (e) {
+    updateLastMessage('❗ Error: Could not reach API.');
+    console.error(e);
+  }
+}
+
+function appendMessage(txt, sender, isTemp = false) {
+  const msg = document.createElement('div');
+  msg.classList.add('message', sender);
+  msg.textContent = txt;
+  if (isTemp) msg.dataset.temp = 'true';
+  chatBody.appendChild(msg);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function updateLastMessage(txt) {
+  const last = Array.from(chatBody.children).reverse()
+    .find(el => el.dataset.temp === 'true');
+  if (last) {
+    last.textContent = txt;
+    delete last.dataset.temp;
+  }
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+</script>
+
+</body>
+</html>

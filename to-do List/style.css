@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: poppins;
+}
+
+body {
+    font-family: poppins;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(1, 15, 121), rgb(176, 33, 56));
+    height: 200vh;
+}
+
+.box {
+    width: 30vw;
+    max-width: 380px;
+    min-width: 280px;
+    margin: 100px 20px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px black;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding-left: 30px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    background-color: transparent;
+
+
+}
+
+#btn {
+    border: 0;
+    background-color: orangered;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.list {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+p {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    /* width: 30vw;
+    max-width: 350px;
+    min-width: 250px; */
+    width: 90%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list button {
+    border: 0;
+  padding: 4px 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(to right ,rgb(1, 15, 121),rgb(176, 33, 56) );
+
+}

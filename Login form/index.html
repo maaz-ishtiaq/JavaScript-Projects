@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Sign Up Box -->
+    <div class="box signup-box">
+      <i class="border-line"></i>
+      <form action="">
+        <h2>Sign Up</h2>
+        <div class="input-box">
+          <input type="text" required="required" />
+          <span>First Name</span>
+          <i></i>
+        </div>
+        <div class="input-box">
+          <input type="text" required="required" />
+          <span>Last name</span>
+          <i></i>
+        </div>
+        <div class="input-box">
+          <input type="text" class="email" required="required" />
+          <span>Email</span>
+          <i></i>
+          <p class="invalid">Invalid Email</p>
+        </div>
+        <div class="input-box">
+          <input type="password" class="password" required="required" />
+          <span>Password</span>
+          <p class="strength"></p>
+
+          <img class="show-hide" src="close_eye-removebg-preview.png" alt="" />
+          <i></i>
+          <a href="#" class="forgot">Forgot Password</a>
+          <div class="login-text">
+            <p class="Already">Already have an account</p>
+            <a href="#" class="login-btn">Login</a>
+          </div>
+          <button class="signup">Sign Up</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Login Box -->
+    <div class="box login-box" style="display: none;">
+      <i class="border-line"></i>
+      <form action="">
+        <h2>Login</h2>
+        <div class="input-box">
+          <input type="text" class="email" required="required" />
+          <span>Email</span>
+          <i></i>
+          <p class="invalid">Invalid Email</p>
+        </div>
+        <div class="input-box">
+          <input type="password" class="password" required="required" />
+          <span>Password</span>
+          <img class="show-hide" src="close_eye-removebg-preview.png" alt="" />
+          <i></i>
+          <a href="#" class="forgot">Forgot Password</a>
+          <div class="signup-text">
+            <p class="Already">Create account</p>
+            <a href="#" class="signup-btn">Sign up</a>
+          </div>
+          <button class="login-submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, #0a0a0a, #3a4452);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins, sans-serif;
+}
+
+.calculator {
+    border: 1px solid #525c6c;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 1px 3px 15px #525c6c;
+    background-color: transparent;
+    font-family: poppins, sans-serif;
+
+}
+
+
+input {
+    border: none;
+    background-color: transparent;
+    text-align: right;
+    padding: 24px;
+    font-size: 25px;
+    color: wheat;
+    margin: 10px;
+    font-size: 40px;
+    width: 265px;
+    margin: 10px;
+}
+
+input::placeholder {
+    color: wheat;
+}
+
+button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: -8px -8px 15px rgb(255, 255, 255, 0.1);
+    background-color: transparent;
+    margin: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+button:hover{
+      transform: scale(1.16666);
+}
+
+.operator {
+    color: #6dee0a;
+}
+
+.equalbtn {
+    background-color: rgb(251, 124, 20);
+    animation: aaz ease-in-out 9s infinite;
+}
+
+@keyframes aaz{
+    10%{
+          background-color: rgb(251, 124, 20);
+  
+    }
+    30%{
+                background-color: rgb(30, 183, 13);
+
+    }
+    60%{
+        background-color: aqua;
+    }
+    90%{
+        background-color: brown;
+    }
+    100%{
+        background-color: yellow;
+    }
+}
