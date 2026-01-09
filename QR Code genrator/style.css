@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a3a3a;
+  margin: 8;
+  height: 100νη;
+  background: Linear-gradient(45deg, #415808, #e568dc,
+      #ffb374, #ef5f5f, #d846b6);
+  background-size: 500% 500%;
+  animation: bg 5s ease-in-out infinite;
+
+}
+
+.box {
+  padding: 20px;
+  box-shadow: 3px 3px 15px grey;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+
+}
+
+input {
+  margin: 20px 0px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 20px;
+  /* Size for user-entered text */
+}
+
+/* Target only the placeholder text */
+input::placeholder {
+  font-size: 14px;
+  /* Smaller size for placeholder */
+  color: gray;
+  /* Optional: softer color for placeholder */
+}
+
+button {
+  border: none;
+  background-color: blue;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0px;
+  border: 1px solid grey;
+  animation: bgColorFade 5s ease infinite;
+
+  cursor: pointer;
+}
+
+/* .imgbox{
+   position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50,-50);
+} */
+img {
+  position: relative;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50, -50);
+}
+
+
+@keyframes bgColorFade {
+  0% {
+    background-color: #ff6ec4;
+  }
+
+  50% {
+    background-color: #7873f5;
+  }
+
+  100% {
+    background-color: #47e5bc;
+  }
+}
+
+@keyframes bg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 8% 50%;
+
+  }
+}
