@@ -11,9 +11,6 @@ let inputtext = document.getElementById('input')
     }
 
     }
-
-
-    
 inputtext.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         qrgenrate();
