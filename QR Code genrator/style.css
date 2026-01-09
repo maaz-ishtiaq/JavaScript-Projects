@@ -36,15 +36,11 @@ input {
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 20px;
-  /* Size for user-entered text */
 }
 
-/* Target only the placeholder text */
 input::placeholder {
   font-size: 14px;
-  /* Smaller size for placeholder */
   color: gray;
-  /* Optional: softer color for placeholder */
 }
 
 button {
@@ -60,13 +56,6 @@ button {
 
   cursor: pointer;
 }
-
-/* .imgbox{
-   position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50,-50);
-} */
 img {
   position: relative;
   top: 50%;
