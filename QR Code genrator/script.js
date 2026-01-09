@@ -9,8 +9,11 @@ let inputtext = document.getElementById('input')
     else{
         alert("Enter the Text or URL");
     }
-    
+
     }
+
+
+    
 inputtext.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         qrgenrate();
